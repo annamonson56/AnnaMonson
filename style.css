@@ -7,7 +7,7 @@ body {
 }
 
 #layout {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background: #5C7285;
 
@@ -75,6 +75,7 @@ a {
   margin-bottom: 20px; 
 }
 
+/* Global Styles */
 .image-container {
   display: flex;
   gap: 75px;
@@ -85,11 +86,34 @@ a {
 
 .image-container img {
   flex: 1;
-  padding: 0px;
-  max-width: 20%;
+  padding: 0;
+  max-width: 20%; /* Adjust the max-width for large screens */
   border-radius: 20px;
   border: 5px solid #98AFC7;
 }
+
+/* Media Query for Tablets and Smaller Screens (max-width: 900px) */
+@media (max-width: 900px) {
+  .image-container {
+    gap: 50px; /* Reduce the gap between images */
+  }
+
+}
+
+/* Media Query for Mobile Screens (max-width: 600px) */
+@media (max-width: 600px) {
+  .image-container {
+    flex-direction: column; /* Stack images vertically on mobile */
+    align-items: center;
+    gap: 20px; /* Reduce gap between images on mobile */
+    padding-top: 20px; /* Add padding at the top for mobile */
+  }
+
+  .image-container img {
+    max-width: 50%; /* Increase image size to fit the mobile screen */
+  }
+}
+
 
 #card-bottom {
   background-color: #A7B49E;
